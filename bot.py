@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import json
 import random
+import os
 with open('setting.json', 'r', encoding='utf-8') as jfile:
     jdata1 = json.load(jfile)
 with open('other_use.json', 'r', encoding='utf-8') as jfile:
@@ -31,5 +32,11 @@ async def ping(ctx): #ctx是上下文 ex: A:嗨 (使用者,id,所在伺服器,�
 async def on_member_remove(member):
     channel = bot.get_channel(int(jdata1["Leave_Channel_ID"]))
     await channel.send(f"{member.mention} 離開伺服器！")#用await是因為協成
-bot.run(jdata1['TOKEN'])#bot啟動，並在括弧中填入token
+
+for filename in os.listdir('./cmds'): 
+    if filename.endswith('.py'): #檢查檔案是否以.py結尾
+        bot.load_extension(f'cmds.{filename[:-3]}') #載入指令檔案，去掉.py的部分
+        
+if __name__ == '__main__': #如果這個檔案是主程式
+    bot.run(jdata1['TOKEN'])#bot啟動，並在括弧中填入token
 #如果他不是loop執行完會閃退
