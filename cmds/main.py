@@ -1,8 +1,8 @@
 import discord
 from discord.ext import commands
 from core.classes import Cog_extension #從core/classes.py中引入Cog_extension類別
-import random
-class Main(Cog_extension):
+
+class Main(Cog_extension , name='Main'):
     
     def __init__(self, bot):
         self.bot = bot
