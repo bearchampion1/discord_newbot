@@ -1,4 +1,5 @@
 {
     "pic1": ["D:\\dc_bot\\picture\\picture.png","D:\\dc_bot\\picture\\camp.jpeg"],
-    "web_pic1": ["https://i.epochtimes.com/assets/uploads/2023/12/id14137372-653574.jpg","https://media.tenor.com/YUm4HHrnXIQAAAAM/yuuki-sakuna-vtuber.gif"]
+    "web_pic": ["https://i.epochtimes.com/assets/uploads/2023/12/id14137372-653574.jpg",
+                 "https://media.tenor.com/YUm4HHrnXIQAAAAM/yuuki-sakuna-vtuber.gif"]
 }

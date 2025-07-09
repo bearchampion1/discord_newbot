@@ -25,16 +25,7 @@ async def on_member_join(member):
 async def ping(ctx): #ctx是上下文 ex: A:嗨 (使用者,id,所在伺服器,所在頻道) B:早安
     await ctx.send(f"延遲時間:{round(bot.latency*1000,2)}(ms)") #bot.latency是bot的延遲時間，ctx.send是發送訊息到提出指令頻道
 
-@bot.command() #指令
-async def 圖片(ctx):#傳送圖片的指令區
-    random_pic = random.choice(jdata2["pic1"])   #從json檔中隨機選擇一張圖片
-    pic = discord.File(random_pic) #discord.File是discord.py中用來處理檔案的類別，括號中填入圖片的路徑 
-    await ctx.send(file = pic)  #ctx.send是發送訊息到提出指令頻道，file是發送檔案 
 
-async def web_pic(ctx):
-    random_pic = random.choice(jdata2["web_pic1"])   #從json檔中隨機選擇一張圖片
-    pic = discord.File(random_pic) #discord.File是discord.py中用來處理檔案的類別，括號中填入圖片的路徑 
-    await ctx.send(file = pic)  #ctx.send是發送訊息到提出指令頻道，file是發送檔案
 
 @bot.event
 async def on_member_remove(member):
