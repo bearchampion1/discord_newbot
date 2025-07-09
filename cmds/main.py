@@ -1,4 +1,4 @@
-import discord
+
 from discord.ext import commands
 from core.classes import Cog_extension #從core/classes.py中引入Cog_extension類別
 

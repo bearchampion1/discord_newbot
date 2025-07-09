@@ -6,6 +6,7 @@ import json
 
 with open('other_use.json', 'r', encoding='utf-8') as jfile:
     jdata2 = json.load(jfile)  # 從other_use.json讀取資料，並將其轉換為Python字典格式
+
 class React(Cog_extension, name='react'):
     
     @commands.command() #指令
