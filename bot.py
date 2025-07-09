@@ -21,7 +21,12 @@ async def on_member_join(member):
     await channel.send(f"歡迎 {member.mention} 來到伺服器！")#用await是因為協成
 @bot.command() #指令
 async def ping(ctx): #ctx是上下文 ex: A:嗨 (使用者,id,所在伺服器,所在頻道) B:早安
-    await ctx.send(f"延遲時間:{round(bot.latency*1000,2)}(ms)") #bot.latency是bot的延遲時間，ctx.send是發送訊息到頻道
+    await ctx.send(f"延遲時間:{round(bot.latency*1000,2)}(ms)") #bot.latency是bot的延遲時間，ctx.send是發送訊息到提出指令頻道
+@bot.command() #指令
+async def 圖片(ctx):#傳送圖片的指令區
+    pic = discord.File("D:\\dc_bot\\picture\\picture.png") #圖片路徑
+    await ctx.send(file = pic)  #ctx.send是發送訊息到提出指令頻道，file是發送檔案 
+
 @bot.event
 async def on_member_remove(member):
     channel = bot.get_channel(int(jdata["Leave_Channel_ID"]))
