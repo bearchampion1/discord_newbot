@@ -37,8 +37,16 @@ async def reload(ctx, extension):
 for filename in os.listdir('./cmds'): 
     if filename.endswith(".py"): #檢查檔案是否以.py結尾
         bot.load_extension(f'cmds.{filename[:-3]}')
-            
-        
+   
+@bot.command()
+async def reload_task(ctx, extension):
+    bot.reload_extension(f'task.{extension}')            
+    await ctx.send(f'load {extension} done!') 
+
+for filename in os.listdir('./task'): 
+    if filename.endswith(".py"): #檢查檔案是否以.py結尾
+        bot.load_extension(f'task.{filename[:-3]}')
+
 if __name__ == '__main__': #如果這個檔案是主程式
     bot.run(jdata1['TOKEN'])#bot啟動，並在括弧中填入token
 #如果他不是loop執行完會閃退
