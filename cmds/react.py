@@ -19,6 +19,8 @@ class React(Cog_extension, name='react'):
     async def web_pic(self ,ctx):
         random_pic = random.cshoice(jdata2["web_pic"])   #從json檔中隨機選擇一張圖片 
         await ctx.send(random_pic)  #ctx.send是發送訊息到提出指令頻道，file是發送檔案
+    
+    
 
 def setup(bot):
     bot.add_cog(React(bot))#傳入bot物件從bot.py中取得設定檔進React class
